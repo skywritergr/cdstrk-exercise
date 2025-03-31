@@ -1,17 +1,11 @@
-import { FC, ReactNode } from "react";
+import { TableComponent } from "../types";
 
-type TableProps = { children: ReactNode };
-type TableRowProps = { children: ReactNode; className?: string };
-type TableCellProps = { children: ReactNode; className?: string };
-
-type TableComponent = FC<TableProps> & {
-  Head: FC<TableProps>;
-  Row: FC<TableRowProps>;
-  Cell: FC<TableCellProps>;
-};
-
-export const Table: TableComponent = ({ children }) => (
-  <table className="w-full border-collapse border border-gray-300">
+export const Table: TableComponent = ({ children, caption, ariaLabel }) => (
+  <table
+    className="w-full border-collapse border border-gray-300"
+    aria-label={ariaLabel || "Data table"}
+  >
+    {caption && <caption className="sr-only">{caption}</caption>}
     {children}
   </table>
 );
@@ -24,6 +18,11 @@ Table.Row = ({ children, className }) => (
   <tr className={`border-b border-gray-300 ${className}`}>{children}</tr>
 );
 
-Table.Cell = ({ children, className }) => (
-  <td className={`p-2 border border-gray-300 ${className}`}>{children}</td>
-);
+Table.Cell = ({ children, className, scope }) =>
+  scope ? (
+    <th scope={scope} className={`p-2 border border-gray-300 ${className}`}>
+      {children}
+    </th>
+  ) : (
+    <td className={`p-2 border border-gray-300 ${className}`}>{children}</td>
+  );

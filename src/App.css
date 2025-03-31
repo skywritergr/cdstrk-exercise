@@ -1,4 +1,3 @@
-/* Centering the table on the page */
 .page-container {
   display: flex;
   align-items: center;
@@ -8,7 +7,6 @@
   background-color: #f8f9fa;
 }
 
-/* Table container styling */
 .container {
   width: 80%;
   max-width: 900px;
@@ -18,7 +16,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Header section */
 .header {
   display: flex;
   align-items: center;
@@ -26,7 +23,6 @@
   margin-bottom: 15px;
 }
 
-/* Select All Checkbox container */
 .select-all-container {
   display: flex;
   align-items: center;
@@ -39,7 +35,6 @@
   color: #333;
 }
 
-/* Download Button */
 .download-button {
   background-color: #007bff;
   color: white;
@@ -53,14 +48,12 @@
   background-color: #0056b3;
 }
 
-/* Custom Checkbox */
 .custom-checkbox {
   width: 16px;
   height: 16px;
   cursor: pointer;
 }
 
-/* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -76,24 +69,45 @@ th {
   background: #f1f1f1;
 }
 
-/* Row styling */
 tr.selected-row {
   background-color: #e3f2fd;
 }
 
-/* Hover effect: same color as selected */
 tr:hover {
   background-color: #e3f2fd;
   cursor: pointer;
 }
 
-/* Status styles */
 .status-available {
-  color: green;
+  color: #008000;
   font-weight: bold;
 }
 
 .status-scheduled {
-  color: red;
+  color: #b30000;
   font-weight: bold;
+}
+
+/* Accessibility styles */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles */
+:focus {
+  outline: 2px solid #4299e1;
+  outline-offset: 2px;
+}
+
+.checkbox-wrapper {
+  display: inline-flex;
+  align-items: center;
 }

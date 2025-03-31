@@ -1,20 +1,26 @@
 import { forwardRef } from "react";
-
-interface CheckboxProps {
-  checked?: boolean;
-  onChange: () => void;
-}
+import { CheckboxProps } from "../types";
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ checked, onChange }, ref) => {
+  ({ checked, onChange, id, label, name, ariaLabel }, ref) => {
     return (
-      <input
-        type="checkbox"
-        ref={ref}
-        checked={checked}
-        onChange={onChange}
-        className="custom-checkbox"
-      />
+      <div className="checkbox-wrapper">
+        <input
+          type="checkbox"
+          ref={ref}
+          checked={checked}
+          onChange={onChange}
+          className="custom-checkbox"
+          id={id}
+          name={name}
+          aria-label={ariaLabel || label}
+        />
+        {label && (
+          <label htmlFor={id} className="sr-only">
+            {label}
+          </label>
+        )}
+      </div>
     );
   }
 );
