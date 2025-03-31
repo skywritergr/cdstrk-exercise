@@ -5,3 +5,4 @@ To run the React app, follow these steps:
 - Clone the repository:
 - Run `npm install` to install the dependencies.
 - Run `npm run dev` to start the development server.
+- Run `npm run test` to run the tests.
