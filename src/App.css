@@ -1,0 +1,99 @@
+/* Centering the table on the page */
+.page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f8f9fa;
+}
+
+/* Table container styling */
+.container {
+  width: 80%;
+  max-width: 900px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Select All Checkbox container */
+.select-all-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.selected-text {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Download Button */
+.download-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+  background: #f1f1f1;
+}
+
+/* Row styling */
+tr.selected-row {
+  background-color: #e3f2fd;
+}
+
+/* Hover effect: same color as selected */
+tr:hover {
+  background-color: #e3f2fd;
+  cursor: pointer;
+}
+
+/* Status styles */
+.status-available {
+  color: green;
+  font-weight: bold;
+}
+
+.status-scheduled {
+  color: red;
+  font-weight: bold;
+}
